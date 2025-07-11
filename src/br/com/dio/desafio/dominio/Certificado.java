@@ -2,7 +2,9 @@ package br.com.dio.desafio.dominio;
 
 import java.time.LocalDate;
 import java.util.UUID;
-
+/**
+ * Classe imutável que representa um certificado de conclusão de conteúdo.
+ */
 public class Certificado {
   private final Dev dev;
   private final Conteudo conteudo;
