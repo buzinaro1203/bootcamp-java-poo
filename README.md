@@ -34,7 +34,25 @@ Este projeto simula uma plataforma de bootcamps onde desenvolvedores podem se in
 ## 🧪 Como Executar o Projeto
 
 1. Clone o repositório:
-
-```bash
 git clone https://github.com/seu-usuario/bootcamp-java-dev.git
 cd bootcamp-java-dev
+2. Abra o projeto em sua IDE Java preferida (IntelliJ, Eclipse, VS Code com Java).
+3. Execute a classe Main.java para ver a simulação do sistema.
+
+
+## 📄 Exemplo de saida
+
+------ Status de Jorge ------  
+Conteúdos inscritos: Projeto de POO, Mentoria de Java  
+Conteúdos concluídos: Sintaxe Básica Java, POO em Java  
+XP acumulado: 30.0  
+  
+------ Status de João ------  
+Conteúdos inscritos: POO em Java, Projeto de POO, Mentoria de Java  
+Conteúdos concluídos: Sintaxe Básica Java  
+XP acumulado: 12.0  
+
+
+👨‍💻 Autor
+Projeto do curso de POO da Dio.   
+Desenvolvido por Guilherme Buzinaro
