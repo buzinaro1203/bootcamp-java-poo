@@ -12,7 +12,7 @@ public class Dev {
   private Set<Certificado> certificados = new HashSet<>();
 
   public void avaliar(Conteudo conteudo) {
-    boolean concluido = inscricoes.stream().anyMatch(inscricao -> inscricao.getConteudo().equals(conteudo));
+    boolean concluido = inscricoes.stream().anyMatch(inscricao -> inscricao.getConteudo().equals(conteudo) && inscricao.isConcluido()) ;
     if (concluido) {
       Scanner s = new Scanner(System.in);
       System.out.println("Digite a nota que você da para o curso:");
@@ -76,7 +76,7 @@ public class Dev {
   }
 
   public Set<Inscricao> getInscricoes() {
-    return inscricoes;
+    return Collections.unmodifiableSet(inscricoes);
   }
 
   public String getNome() {
@@ -94,7 +94,7 @@ public class Dev {
         conteudos.add(i.getConteudo());
       }
     }
-    return conteudos;
+    return Collections.unmodifiableSet(conteudos);
   }
 
   // Para exibir conteúdos concluídos
