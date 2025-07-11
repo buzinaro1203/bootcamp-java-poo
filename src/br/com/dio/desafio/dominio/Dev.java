@@ -1,5 +1,6 @@
 package br.com.dio.desafio.dominio;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Scanner;
@@ -16,11 +17,14 @@ public class Dev {
       Scanner s = new Scanner(System.in);
       System.out.println("Digite a nota que você da para o curso:");
       double nota = s.nextDouble();
+      s.nextLine();
       System.out.println("Digite agora um comentario sobre o curso:");
       String comentario = s.nextLine();
       Avaliacao avaliacao = new Avaliacao(this, conteudo, nota, comentario);
       conteudo.adicionarAvaliacao(avaliacao);
 
+    } else {
+      System.out.println("Só é possivel avaliar conteudos que voce concluiu");
     }
   }
 
@@ -31,7 +35,7 @@ public class Dev {
       Inscricao inscricao = inscricaoOpt.get();
       inscricao.concluir();
       System.out.println(nome + " Concluiu o conteudo de " + inscricao.getConteudo().getTitulo());
-      this.certificados.add(new Certificado(this, inscricao.getConteudo()));
+      emitirCertificado(inscricao.getConteudo());
 
     } else {
       System.out.println("Voce não possui incrição em nenhum curso.");
@@ -63,6 +67,18 @@ public class Dev {
   }
 
   //         <<<<<< Getters & Setters>>>>>>
+  private void emitirCertificado(Conteudo conteudo) {
+    this.certificados.add(new Certificado(this, conteudo));
+  }
+
+  public Set<Certificado> getCertificados() {
+    return Collections.unmodifiableSet(certificados);
+  }
+
+  public Set<Inscricao> getInscricoes() {
+    return inscricoes;
+  }
+
   public String getNome() {
     return nome;
   }
@@ -82,13 +98,26 @@ public class Dev {
   }
 
   // Para exibir conteúdos concluídos
+  public void exibirCertificados(){
+    if (certificados.isEmpty()) {
+      System.out.println(nome + " ainda não possui certificados.");
+      return;
+    }
+
+    System.out.println("Certificados de " + nome + ":");
+    for (Certificado certificado : certificados) {
+      System.out.println(certificado.gerarCertificado());
+    }
+  }
+
   public Set<Conteudo> getConteudosConcluidos() {
-    Set<Conteudo> conteudos = new HashSet<>();
+    Set<Conteudo> conteudosConcluidos = new HashSet<>();
     for (Inscricao i : inscricoes) {
       if (i.isConcluido()) {
-        conteudos.add(i.getConteudo());
+        conteudosConcluidos.add(i.getConteudo());
       }
     }
-    return conteudos;
+    return conteudosConcluidos;
   }
 }
+

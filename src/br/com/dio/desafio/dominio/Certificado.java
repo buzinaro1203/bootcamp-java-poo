@@ -1,8 +1,11 @@
 package br.com.dio.desafio.dominio;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
-
+/**
+ * Classe imutável que representa um certificado de conclusão de conteúdo.
+ */
 public class Certificado {
   private final Dev dev;
   private final Conteudo conteudo;
@@ -13,6 +16,8 @@ public class Certificado {
     this.dev = dev;
     this.conteudo = conteudo;
     this.data = LocalDate.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    data.format(formatter);
     this.codigo = UUID.randomUUID();
   }
 
