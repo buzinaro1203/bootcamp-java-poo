@@ -7,6 +7,8 @@ public abstract class Conteudo {
   protected static final double XP_PADRAO = 10d;
   private String titulo, descricao;
   private Set<Dev> devsInscritos = new HashSet<>();
+  private Set<Avaliacao> avaliacoes = new HashSet<>();
+  private double notaMedia;
 
   public Conteudo(String titulo, String descricao) {
     this.titulo = titulo;
@@ -16,15 +18,28 @@ public abstract class Conteudo {
 
   public abstract double calcularXp();
 
+  public void calcularMediaNotas() {
+    double notaTotal = 0;
+    for (Avaliacao avaliacoe : avaliacoes) {
+
+      notaTotal += avaliacoe.getNota();
+    }
+    this.notaMedia = notaTotal / avaliacoes.size();
+  }
 
   //    <<<<<< Getter and Setters >>>>>>
+  public void adicionarAvaliacao(Avaliacao avaliacao) {
+    this.avaliacoes.add(avaliacao);
+    calcularMediaNotas();
+  }
+
 
   public Set<Dev> getDevsInscritos() {
     return devsInscritos;
   }
 
-  public void setDevsInscritos(Set<Dev> devsInscritos) {
-    this.devsInscritos = devsInscritos;
+  public Set<Avaliacao> getAvaliacoes() {
+    return avaliacoes;
   }
 
   public String getTitulo() {
