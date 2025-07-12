@@ -1,4 +1,10 @@
-package br.com.dio.desafio.dominio;
+package br.com.dio.desafio.dominio.usuario;
+
+import br.com.dio.desafiio.avaliacao.Avaliacao;
+import br.com.dio.desafio.dominio.conteudo.Conteudo;
+import br.com.dio.desafio.dominio.bootcamp.Bootcamp;
+import br.com.dio.desafio.dominio.inscricao.Certificado;
+import br.com.dio.desafio.dominio.inscricao.Inscricao;
 
 import java.util.Collections;
 import java.util.HashSet;

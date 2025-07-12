@@ -1,4 +1,9 @@
-import br.com.dio.desafio.dominio.*;
+import br.com.dio.desafio.dominio.bootcamp.Bootcamp;
+import br.com.dio.desafio.dominio.conteudo.Conteudo;
+import br.com.dio.desafio.dominio.conteudo.Curso;
+import br.com.dio.desafio.dominio.conteudo.Mentoria;
+import br.com.dio.desafio.dominio.usuario.Dev;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;

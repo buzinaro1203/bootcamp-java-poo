@@ -1,4 +1,7 @@
-package br.com.dio.desafio.dominio;
+package br.com.dio.desafio.dominio.inscricao;
+
+import br.com.dio.desafio.dominio.conteudo.Conteudo;
+import br.com.dio.desafio.dominio.usuario.Dev;
 
 import java.time.LocalDate;
 

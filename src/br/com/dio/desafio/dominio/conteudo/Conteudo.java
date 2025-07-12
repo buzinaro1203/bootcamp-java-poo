@@ -1,4 +1,7 @@
-package br.com.dio.desafio.dominio;
+package br.com.dio.desafio.dominio.conteudo;
+
+import br.com.dio.desafiio.avaliacao.Avaliacao;
+import br.com.dio.desafio.dominio.usuario.Dev;
 
 import java.util.HashSet;
 import java.util.Set;
